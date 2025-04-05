@@ -1,0 +1,132 @@
+.start-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1000px;
+  padding: 20px;
+}
+
+.title-container {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.title {
+  font-size: 2rem;
+  color: var(--text-color);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.characters-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.character-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 220px;
+  padding: 15px;
+  border-radius: var(--border-radius);
+  background-color: var(--card-background);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.character-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+}
+
+.character-card.selected {
+  border: 2px solid var(--energy-color);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3), 0 0 0 2px var(--energy-color);
+}
+
+.character-image {
+  margin-bottom: 15px;
+  width: 100px;
+  height: 100px;
+}
+
+.character-placeholder {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+.character-info {
+  text-align: center;
+  width: 100%;
+}
+
+.character-info h3 {
+  margin-bottom: 8px;
+  font-size: 1.2rem;
+}
+
+.character-info .health {
+  color: var(--health-color);
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.character-info .description {
+  font-size: 0.9rem;
+  color: #aaa;
+  line-height: 1.3;
+}
+
+.start-button {
+  padding: 12px 40px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: var(--energy-color);
+  color: #333;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.start-button:hover:not(.disabled) {
+  background-color: #f39c12;
+  transform: translateY(-2px);
+}
+
+.start-button.disabled {
+  background-color: #555;
+  color: #999;
+  cursor: not-allowed;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.5rem;
+  }
+  
+  .characters-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .character-card {
+    width: 100%;
+    max-width: 300px;
+  }
+}
