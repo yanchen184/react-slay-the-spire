@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-slay-the-spire/static/css/main.8d47f0f7.css",
+    "main.js": "/react-slay-the-spire/static/js/main.237a579a.js",
+    "index.html": "/react-slay-the-spire/index.html",
+    "main.8d47f0f7.css.map": "/react-slay-the-spire/static/css/main.8d47f0f7.css.map",
+    "main.237a579a.js.map": "/react-slay-the-spire/static/js/main.237a579a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8d47f0f7.css",
+    "static/js/main.237a579a.js"
+  ]
+}
