@@ -1,0 +1,149 @@
+.enemy-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: var(--border-radius);
+}
+
+.enemy-info {
+  display: flex;
+  align-items: center;
+}
+
+.enemy-avatar {
+  margin-right: 15px;
+}
+
+.avatar-placeholder {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.enemy-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.enemy-name-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.enemy-name {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.enemy-tag {
+  margin-left: 8px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.enemy-tag.elite {
+  background-color: #9b59b6;
+  color: white;
+}
+
+.enemy-tag.boss {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.enemy-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.status-effect {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.status-effect.block {
+  background-color: var(--block-color);
+  color: white;
+}
+
+.enemy-intent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px;
+  border-radius: var(--border-radius);
+  background-color: rgba(0, 0, 0, 0.4);
+  min-width: 80px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.intent-icon {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.intent-text {
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.enemy-intent.attack {
+  border-left: 3px solid var(--health-color);
+}
+
+.enemy-intent.defend {
+  border-left: 3px solid var(--block-color);
+}
+
+.enemy-intent.buff {
+  border-left: 3px solid var(--success-color);
+}
+
+.enemy-intent.unknown {
+  border-left: 3px solid #cccccc;
+}
+
+.effect-icon {
+  margin-right: 5px;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 600px) {
+  .enemy-stats {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .enemy-info {
+    margin-bottom: 10px;
+  }
+  
+  .avatar-placeholder {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+  
+  .enemy-status {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
