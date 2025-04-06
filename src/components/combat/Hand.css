@@ -1,0 +1,49 @@
+.hand {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  min-height: 220px;
+  position: relative;
+  padding: 20px 10px;
+  width: 100%;
+  perspective: 1000px;
+}
+
+.card-container {
+  position: relative;
+  transition: transform 0.3s ease, z-index 0.3s;
+  margin: 0 -15px;
+  transform-origin: bottom center;
+}
+
+.card-container:hover {
+  transform: translateY(-30px) scale(1.1) rotate(0deg) !important;
+  z-index: 100 !important;
+}
+
+.empty-hand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  width: 100%;
+  color: #999;
+  font-style: italic;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: var(--border-radius);
+}
+
+@media (max-width: 768px) {
+  .hand {
+    min-height: 180px;
+    padding: 10px 5px;
+  }
+  
+  .card-container {
+    margin: 0 -25px;
+  }
+  
+  .card-container:hover {
+    transform: translateY(-20px) scale(1.05) rotate(0deg) !important;
+  }
+}
