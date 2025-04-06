@@ -1,0 +1,86 @@
+.combat-log {
+  width: 100%;
+  height: 100%;
+  max-height: 150px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 5px;
+  padding-right: 5px;
+}
+
+.log-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 5px 8px;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.2);
+  font-size: 0.9rem;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.log-message {
+  flex: 1;
+}
+
+.log-time {
+  font-size: 0.7rem;
+  color: #aaa;
+  margin-left: 10px;
+}
+
+.empty-log {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  color: #999;
+  font-style: italic;
+}
+
+/* 滾動條樣式 */
+.combat-log::-webkit-scrollbar {
+  width: 6px;
+}
+
+.combat-log::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+}
+
+.combat-log::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+.combat-log::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .combat-log {
+    max-height: 120px;
+  }
+  
+  .log-entry {
+    padding: 3px 6px;
+    font-size: 0.8rem;
+  }
+  
+  .log-time {
+    font-size: 0.6rem;
+  }
+}
