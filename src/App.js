@@ -43,7 +43,7 @@ function App() {
     <div className="app">
       <header className="app-header">
         <h1>React Slay the Spire</h1>
-        <span className="version">v0.1.0</span>
+        <span className="version">v0.2.0</span>
       </header>
       
       <main className="game-container">

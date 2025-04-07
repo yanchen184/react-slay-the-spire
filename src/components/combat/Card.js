@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { CARD_RARITY, CARD_TYPE } from '../../data/cards';
 import './Card.css';
 
 const Card = ({ card, onClick, disabled }) => {
+  const [lastClickTime, setLastClickTime] = useState(0);
+  
   // 卡牌類型背景顏色
   const getCardTypeColor = () => {
     switch (card.type) {
@@ -42,10 +44,25 @@ const Card = ({ card, onClick, disabled }) => {
     );
   };
 
+  // 處理雙擊事件
+  const handleClick = () => {
+    if (disabled) return;
+    
+    const now = new Date().getTime();
+    const timeDiff = now - lastClickTime;
+    
+    // 如果是雙擊 (時間差小於 300ms)
+    if (timeDiff < 300 && timeDiff > 0) {
+      onClick();
+    }
+    
+    setLastClickTime(now);
+  };
+
   return (
     <div 
       className={`card ${card.type} ${disabled ? 'disabled' : ''}`}
-      onClick={disabled ? null : onClick}
+      onClick={handleClick}
       style={{
         backgroundColor: getCardTypeColor(),
         borderColor: getRarityBorderColor()
