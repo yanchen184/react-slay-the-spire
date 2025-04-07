@@ -29,7 +29,7 @@ const CombatScreen = () => {
   // 處理卡牌點擊
   const handleCardPlay = (card) => {
     // 如果不是玩家回合或能量不足，則不能打出卡牌
-    if (!isPlayerTurn || energy < card.value) return;
+    if (!isPlayerTurn || energy < card.energy) return;
     
     // 確定目標 (對於攻擊牌是敵人，對於技能牌是自己)
     const targetId = card.target === 'enemy' ? currentEnemy.id : player.id;
